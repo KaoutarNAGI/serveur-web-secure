@@ -12,7 +12,7 @@ Installer et configurer Nginx sur Ubuntu, sécuriser le site avec HTTPS (Let's E
 - `.github/workflows/ci.yml` — CI basique (ShellCheck)
 
 ## ⚙️ Pré-requis
-- VM Ubuntu (ta VM VMware Workstation est parfaite)
+- VM Ubuntu 
 - Accès root / sudo
 - (Optionnel si certif réel) un nom de domaine pointant vers l'IP publique du serveur
 
