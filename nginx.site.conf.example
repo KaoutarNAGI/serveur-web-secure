@@ -1,1 +1,22 @@
+server {
+    listen 80;
+    server_name example.com www.example.com;
+    root /var/www/example.com;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+
+# SSL server (exemple pour self-signed)
+server {
+    listen 443 ssl;
+    server_name example.com www.example.com;
+    root /var/www/example.com;
+    index index.html;
+
+    ssl_certificate /etc/ssl/local/example.com.crt;
+    ssl_certificate_key /etc/ssl/local/example.com.key;
+}
 
