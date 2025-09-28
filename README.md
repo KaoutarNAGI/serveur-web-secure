@@ -1,24 +1,31 @@
+
 # serveur-web-secure
-Déploiement d'un serveur Nginx sécurisé (HTTPS) — script d'installation + documentation
 
 ## 🎯 Objectif
-Installer et configurer Nginx sur Ubuntu, sécuriser le site avec HTTPS (Let's Encrypt) et documenter la démarche pour démontrer des compétences d'administration système.
+Installer et configurer Nginx sur Ubuntu, sécuriser le site avec HTTPS via Let's Encrypt, et documenter les étapes.
 
-## 📦 Contenu du dépôt
-- `install-nginx.sh` — script d'installation & configuration (domain, email)
-- `nginx.site.conf.example` — exemple de virtual host Nginx
-- `www/index.html` — page de démonstration
+## 🛠️ Tecnologies
+- Ubuntu 20.04/22.04
+- Nginx
+- Certbot (Let's Encrypt)
+- UFW (firewall)
+
+## 🚀 Étapes (résumé)
+1. Installer Nginx
+2. Configurer les virtual hosts
+3. Ouvrir le firewall (UFW)
+4. Obtenir un certificat avec Certbot
+5. Vérifier la redirection HTTP -> HTTPS
+
+## 📂 Contenu du dépôt
+- `install-nginx.sh` — script d'installation automatique 
+- `nginx.conf.example` — extrait de config
 - `docs/` — captures d'écran et notes
-- `.github/workflows/ci.yml` — CI basique (ShellCheck)
 
-## ⚙️ Pré-requis
-- VM Ubuntu 
-- Accès root / sudo
-- (Optionnel si certif réel) un nom de domaine pointant vers l'IP publique du serveur
+## 🧪 Usage du script
+```bash
+# rendre exécutable
+chmod +x install-nginx.sh
 
-## 🚀 Mode d'emploi (rapide)
-1. Cloner le repo sur la VM.
-2. Rendre le script exécutable : `chmod +x install-nginx.sh`
-3. Lancer (avec domaine réel) :
-   ```bash
-   sudo ./install-nginx.sh example.com ton.email@example.com
+# Exemple d'utilisation (remplacer example.com par ton domaine)
+./install-nginx.sh example.com
